@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card.card-plain.card-sign-in {
+  background-color: #fff !important;
+}
+section.bk-gradiant-01 {
+  background: rgb(108, 13, 209);
+  background: linear-gradient(
+    0deg,
+    rgba(108, 13, 209, 0) 49%,
+    rgba(108, 13, 209, 0.7973564425770308) 100%
+  );
+}
+.navbar-vertical .navbar-brand > img.logo-sixbridge {
+  max-height: max-content;
+}
+.sidenav-footer {
+  position: absolute;
+  bottom: 40px;
+}
+.footer-buttons a.nav-link {
+  flex: 1;
+}
+section.footer-buttons {
+  z-index: 100;
+}
+/* Contenedor con desplazamiento horizontal */
+.btn-scroll {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch; /* Para un desplazamiento más suave en móviles */
+  display: flex;
+  gap: 8px; /* Espaciado entre botones */
+}
+
+.btn-scroll .btn-group {
+  display: inline-flex; /* Para evitar que los botones se rompan en líneas múltiples */
+}
+
+/* Estilo adicional opcional para los botones */
+.btn-scroll .btn-group .btn {
+  flex: none; /* Evita que se ajusten al ancho del contenedor */
+  margin-right: 8px; /* Espaciado entre botones si no se usa gap */
+}
+
+/* Hide unnecessary elements when printing */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #brochure,
+  #brochure * {
+    visibility: visible;
+  }
+
+  #brochure {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  /* Adjust styles for print */
+  .card-header,
+  .btn,
+  .botonera,
+  .header-interior-catalogo {
+    display: none;
+  }
+
+  h1 {
+    font-size: 24pt;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 18pt;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 12pt;
+    margin-bottom: 5px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
